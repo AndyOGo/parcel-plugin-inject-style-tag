@@ -32,6 +32,11 @@ export default class InjectStyleAsset extends CSSAsset {
 
   options: AssetOptions;
 
+  getConfig: (
+    filenames: unknown,
+    opts?: Record<string, unknown>
+  ) => Promise<AnyFilter>;
+
   async getRootPackage(): Promise<PackageJsonInjectStyle> {
     // eslint-disable-next-line no-underscore-dangle
     if (!this._rootPackage) {
@@ -57,7 +62,7 @@ export default class InjectStyleAsset extends CSSAsset {
     }
 
     // Resolve the config file
-    return this.getRootConfig(filenames);
+    return this.getConfig(filenames);
   }
 
   async generate(): Promise<unknown> {
