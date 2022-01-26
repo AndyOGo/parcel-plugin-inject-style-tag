@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.1...v1.0.2) (2022-01-26)
+
+
+### Bug Fixes
+
+* CSSAsset can not be invoked without new ([7acf06f](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/commit/7acf06f4531dd21a19a1a44e76532fffb631a098))
+
 ## [1.0.1](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.0...v1.0.1) (2022-01-26)
 
 
