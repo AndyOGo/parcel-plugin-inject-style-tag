@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sources":["../src/index.ts"],"sourcesContent":["import ParcelBundler from 'parcel-bundler';\n\nexport default function (bundler: ParcelBundler) {\n  bundler.addAssetType('css', require.resolve('./InjectStyleAsset'));\n}\n"],"names":["bundler","addAssetType","require","resolve"],"mappings":"wBAEyBA,GACvBA,EAAQC,aAAa,MAAOC,QAAQC,QAAQ"}

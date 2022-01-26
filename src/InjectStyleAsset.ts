@@ -6,25 +6,25 @@ import filePathFilter, { AnyFilter } from '@jsdevtools/file-path-filter';
 import CSSAsset from 'parcel-bundler/src/assets/CSSAsset.js';
 import Resolver from '../types/Resolver';
 
-export interface PackageJsonInjectStyle {
-  parcelInjectStyleTag: AnyFilter;
+interface PackageJsonInjectStyle extends PackageJson {
+  parcelInjectStyle?: AnyFilter;
 }
 
-export interface RootConfigOptions {
+interface RootConfigOptions {
   packageKey?: 'parcelInjectStyle';
 }
 
-export interface AssetOptions {
+interface AssetOptions {
   rootDir: string;
 }
 
-export interface Result {
+interface Result {
   type: string;
 }
 
 export default class InjectStyleAsset extends CSSAsset {
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  _rootPackage?: Promise<PackageJson>;
+  _rootPackage?: Promise<PackageJsonInjectStyle>;
 
   name: string;
 
@@ -32,13 +32,13 @@ export default class InjectStyleAsset extends CSSAsset {
 
   options: AssetOptions;
 
-  async getRootPackage(): Promise<PackageJson> {
+  async getRootPackage(): Promise<PackageJsonInjectStyle> {
     // eslint-disable-next-line no-underscore-dangle
     if (!this._rootPackage) {
       // eslint-disable-next-line no-underscore-dangle
       this._rootPackage = this.resolver.findPackage(
         this.options.rootDir
-      ) as Promise<PackageJson>;
+      ) as Promise<PackageJsonInjectStyle>;
     }
 
     // eslint-disable-next-line no-underscore-dangle
