@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.2...v1.0.3) (2022-01-26)
+
+
+### Bug Fixes
+
+* RangeError: Maximum call stack size exceeded ([a219988](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/commit/a2199880f6cffd8815cfeae4fe357eab91926542))
+
 ## [1.0.2](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.1...v1.0.2) (2022-01-26)
 
 
