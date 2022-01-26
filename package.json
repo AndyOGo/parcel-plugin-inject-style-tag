@@ -1,0 +1,91 @@
+{
+  "name": "parcel-plugin-inject-style-tag",
+  "version": "0.0.0",
+  "description": "Inject styles into the DOM using multiple <style> tags",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "microbundle --tsconfig tsconfig.build.json --compress",
+    "release": "dotenv semantic-release",
+    "test": "node --require babel-register-ts test",
+    "coverage": "nyc --reporter lcov --reporter text node test",
+    "postcoverage": "dotenv codecov",
+    "eslint": "eslint 'src/**/*.[tj]s' 'types/**/*.[tj]s'",
+    "toc": "doctoc README.md --title '**Table of Contents**'",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndyOGo/parcel-plugin-inject-style-tag.git"
+  },
+  "keywords": [
+    "parcel",
+    "parcel-plugin",
+    "plugin",
+    "css",
+    "inject-css",
+    "inject-style",
+    "inject-style-tag",
+    "style-tag"
+  ],
+  "author": "Andreas Deuschlinger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndyOGo/parcel-plugin-inject-style-tag/issues"
+  },
+  "homepage": "https://github.com/AndyOGo/parcel-plugin-inject-style-tag#readme",
+  "peerDependencies": {
+    "parcel-bundler": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-transform-destructuring": "^7.12.1",
+    "@babel/plugin-transform-object-assign": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@babel/register": "^7.12.1",
+    "@commitlint/cli": "^12.0.0",
+    "@commitlint/config-conventional": "^12.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@types/parcel-bundler": "^1.12.4",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "babel-register-ts": "^7.0.0",
+    "codecov": "^3.8.1",
+    "doctoc": "^2.0.0",
+    "dotenv-cli": "^4.0.0",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-tsdoc": "^0.2.7",
+    "husky": "^7.0.0",
+    "lint-staged": "^10.5.2",
+    "microbundle": "^0.12.0",
+    "nyc": "^15.1.0",
+    "parcel-bundler": "1",
+    "pinst": "^2.1.6",
+    "prettier": "^2.2.1",
+    "semantic-release": "^17.3.0",
+    "type-fest": "^0.21.3",
+    "typedoc-plugin-markdown": "^3.2.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@jsdevtools/file-path-filter": "^3.0.2",
+    "clone": "^2.1.2"
+  }
+}

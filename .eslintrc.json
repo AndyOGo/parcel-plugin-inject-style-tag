@@ -1,0 +1,76 @@
+{
+    "extends": ["airbnb-typescript/base", "plugin:@typescript-eslint/recommended", "prettier", "plugin:prettier/recommended"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "classes": true
+      },
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "eslint-plugin-tsdoc"
+    ],
+    "rules": {
+      "dot-notation": "off",
+      "max-len": ["warn", { "ignoreComments": true, "code": 140, "tabWidth": 2 }],
+      "no-cond-assign": ["error", "except-parens"],
+      "no-else-return": "warn",
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": false }],
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "tsdoc/syntax": "warn",
+      "camelcase": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "default",
+          "format": ["camelCase"]
+        },
+  
+        {
+          "selector": "variable",
+          "format": ["camelCase", "UPPER_CASE"]
+        },
+        {
+          "selector": "parameter",
+          "format": ["camelCase"],
+          "leadingUnderscore": "allow"
+        },
+  
+        {
+          "selector": "memberLike",
+          "modifiers": ["private"],
+          "format": ["camelCase"],
+          "leadingUnderscore": "require"
+        },
+  
+        {
+          "selector": "typeLike",
+          "format": ["PascalCase"]
+        },
+  
+        {
+          "selector": "interface",
+          "format": ["PascalCase"],
+          "custom": {
+            "regex": "^I[A-Z]",
+            "match": false
+          }
+        },
+  
+        {
+          "selector": "typeAlias",
+          "format": ["PascalCase"],
+          "custom": {
+            "regex": "^T[A-Z]",
+            "match": false
+          }
+        }
+      ]
+    },
+    "globals": {}
+  }
