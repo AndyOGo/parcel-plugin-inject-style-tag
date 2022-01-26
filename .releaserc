@@ -17,7 +17,8 @@
       "npmPublish": true
     }],
     ["@semantic-release/exec", {
-      "prepareCmd": "npm run build"
+      "prepareCmd": "npm run build",
+      "successCmd": "git push"
     }],
     ["@semantic-release/git", {
       "assets": ["dist", "CHANGELOG.md", "README.md", "package.json", "package-lock.json"],
