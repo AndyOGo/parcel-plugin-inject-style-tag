@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.5...v1.0.6) (2022-01-31)
+
+
+### Bug Fixes
+
+* broken css source map version ([2648dcc](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/commit/2648dcc791b94335da1ed23f97fc9f9806961a59))
+
 ## [1.0.5](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.4...v1.0.5) (2022-01-31)
 
 
