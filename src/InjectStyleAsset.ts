@@ -107,9 +107,10 @@ export default class InjectStyleAsset extends CSSAsset {
         style.appendChild(document.createTextNode(css));
         document.head.appendChild(style);
       `;
-      jsResult.map = cssResult.map;
 
-      return [jsResult];
+      cssResult.value = '';
+
+      return [jsResult, cssResult];
     }
 
     return result;
