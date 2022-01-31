@@ -32,6 +32,8 @@ export default class InjectStyleAsset extends CSSAsset {
 
   options: AssetOptions;
 
+  injectedStyle?: boolean;
+
   getConfig: (
     filenames: unknown,
     opts?: Record<string, unknown>
@@ -79,6 +81,7 @@ export default class InjectStyleAsset extends CSSAsset {
     );
 
     if (result && config && filePathFilter(config)(this.name)) {
+      this.injectedStyle = true;
       const cssResult = result.find((v: Result) => v.type === 'css');
       const jsResult = result.find((v: Result) => v.type === 'js');
 
