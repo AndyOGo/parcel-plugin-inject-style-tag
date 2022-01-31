@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.3...v1.0.4) (2022-01-31)
+
+
+### Bug Fixes
+
+* don't package injected stylesheets ([3439e43](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/commit/3439e437fc41d3dad9f12edb99741b66baf9e801))
+
 ## [1.0.3](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.2...v1.0.3) (2022-01-26)
 
 

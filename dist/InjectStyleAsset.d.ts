@@ -16,6 +16,7 @@ export default class InjectStyleAsset extends CSSAsset {
     name: string;
     resolver: Resolver;
     options: AssetOptions;
+    injectedStyle?: boolean;
     getConfig: (filenames: unknown, opts?: Record<string, unknown>) => Promise<AnyFilter>;
     getRootPackage(): Promise<PackageJsonInjectStyle>;
     getRootConfig(filenames: string[], opts?: RootConfigOptions): Promise<AnyFilter>;
