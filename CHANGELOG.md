@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.4...v1.0.5) (2022-01-31)
+
+
+### Bug Fixes
+
+* should remove injected css bundle if empty ([b2a6fbe](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/commit/b2a6fbeb67a08264c844a2af3db0ef85b33fa234))
+
 ## [1.0.4](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.3...v1.0.4) (2022-01-31)
 
 
