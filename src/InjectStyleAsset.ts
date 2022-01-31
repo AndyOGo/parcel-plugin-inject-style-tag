@@ -32,7 +32,8 @@ export default class InjectStyleAsset extends CSSAsset {
 
   options: AssetOptions;
 
-  injectedStyle?: boolean;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  _isInjectedStyle?: boolean;
 
   getConfig: (
     filenames: unknown,
@@ -67,8 +68,7 @@ export default class InjectStyleAsset extends CSSAsset {
     return this.getConfig(filenames);
   }
 
-  async generate(): Promise<unknown> {
-    const result = await super.generate();
+  async isInjectedStyle(): Promise<boolean> {
     const config = await this.getRootConfig(
       [
         '.parcelinjectstylerc',
@@ -80,8 +80,23 @@ export default class InjectStyleAsset extends CSSAsset {
       }
     );
 
-    if (result && config && filePathFilter(config)(this.name)) {
-      this.injectedStyle = true;
+    // eslint-disable-next-line no-underscore-dangle
+    this._isInjectedStyle = config && !!filePathFilter(config)(this.name);
+
+    // eslint-disable-next-line no-underscore-dangle
+    return this._isInjectedStyle;
+  }
+
+  isInjectedStyleSync(): boolean {
+    // eslint-disable-next-line no-underscore-dangle
+    return !!this._isInjectedStyle;
+  }
+
+  async generate(): Promise<unknown> {
+    const result = await super.generate();
+    const isInjectedStyle = await this.isInjectedStyle();
+
+    if (result && isInjectedStyle) {
       const cssResult = result.find((v: Result) => v.type === 'css');
       const jsResult = result.find((v: Result) => v.type === 'js');
 
@@ -92,6 +107,7 @@ export default class InjectStyleAsset extends CSSAsset {
         style.appendChild(document.createTextNode(css));
         document.head.appendChild(style);
       `;
+      jsResult.map = cssResult.map;
 
       return [jsResult];
     }
