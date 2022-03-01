@@ -101,6 +101,7 @@ export default class InjectStyleAsset extends CSSAsset {
       const jsResult = result.find((v: Result) => v.type === 'js');
 
       jsResult.value = `
+        ${jsResult.value ? jsResult.value : ''}
         const css = ${JSON.stringify(cssResult.value)};
         const style = document.createElement("style");
         style.type = "text/css";
