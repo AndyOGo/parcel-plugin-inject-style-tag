@@ -1,6 +1,6 @@
 {
   "name": "parcel-plugin-inject-style-tag",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Inject styles into the DOM using multiple <style> tags",
   "main": "dist/index.js",
   "scripts": {

@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.6...v1.0.7) (2022-03-01)
+
+
+### Bug Fixes
+
+* keep CSS modules output if present ([7c64089](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/commit/7c64089c7c64198e00cae0448cc6c56129f96068))
+
 ## [1.0.6](https://github.com/AndyOGo/parcel-plugin-inject-style-tag/compare/v1.0.5...v1.0.6) (2022-01-31)
 
 
